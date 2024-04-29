@@ -25,14 +25,14 @@
   font-weight: bolder;
 }
 
-.search {
+#search {
   display: flex;
   position: relative;
   width: 40vw;
   height: 45%;
 }
 
-.search input {
+#search input {
   width: 100%;
   box-sizing: border-box;
   padding: 2% 3%;
@@ -41,7 +41,7 @@
   font-size: inherit;
 }
 
-.search button {
+#search button {
   position: absolute;
   top: calc(calc(100% - 4%) / 4);
   right: 4%;
