@@ -32,7 +32,7 @@
   height: 45%;
 }
 
-#search input {
+#searchInput {
   width: 100%;
   box-sizing: border-box;
   padding: 2% 3%;
@@ -41,8 +41,9 @@
   font-size: inherit;
 }
 
-#search button {
+.btn {
   position: absolute;
+  border: none;
   top: calc(calc(100% - 4%) / 4);
   right: 4%;
   height: calc(100% / 2);
