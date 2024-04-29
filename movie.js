@@ -28,28 +28,11 @@ fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1', opti
     })
     
     document.querySelector('#card_list').innerHTML = innerHTML;
+    let cards = document.querySelectorAll('.card');
+    cards.forEach(card =>{
+      card.addEventListener('click', function (event) {
+      alert(event.currentTarget.id);
+    });
+    })
   })
   .catch(err => console.error(err));
-  
-
-  // alert창 
-
-let $cardBtn = document.querySelectorAll('.card');
-$cardBtn.forEach(function () {
-})
-// $cardBtn.addEventListener('click', function (event) {
-//   console.log('e', event);
-//   console.log('target', event.target);
-//   console.log('currentTarget', event.currentTarget);
-//   console.log('id', event.target.id);
-//   alert(event.target.id);
-// });
-
-// let cardBtn = document.querySelectorAll('.card');
-// cardBtn.addEventListener('click', function (event) {
-//   console.log('e', event);
-//   console.log('target', event.target);
-//   console.log('currentTarget', event.target);
-//   console.log('id', event.target.id);
-//   alert(event.target.id);
-// })
