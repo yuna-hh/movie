@@ -36,8 +36,12 @@ fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1', opti
       const searchQuery = document.getElementById('searchInput').value.toLowerCase();
       const filteredMovies = movies.filter((movie) => movie.title.toLowerCase().includes(searchQuery))
       let filteredHTML = '';
+      // 검색창이 빈 칸일때
+      if (searchQuery.length == 0) {
+        alert('검색어를 입력하세요.');
+      }
+      
       filteredMovies.forEach(movie => {
-        //li 불러오기
         filteredHTML += `<li id=${movie.id} class="card"><img src=http://image.tmdb.org/t/p/w342${movie.poster_path} alt="movie img"/>
         <div class="rating">
         <span>${movie.title}</span>
@@ -46,6 +50,7 @@ fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1', opti
         </div>
         </li>`
       })
+    
       document.getElementById('card_list').innerHTML = filteredHTML;
       let cards = document.querySelectorAll('.card');
       cards.forEach(card =>{
@@ -53,7 +58,6 @@ fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1', opti
         alert(event.currentTarget.id);
       })});
     });
-
   })
 
   
